@@ -107,4 +107,27 @@ public class YatzyTest {
         assertEquals(18,Yatzy.fullHouse(new Roll(6,2,2,2,6)));
         assertEquals(0, Yatzy.fullHouse(new Roll(2,3,4,5,6)));
     }
+
+
+
+
+    @Test
+    public void testGetScoreWithGivenCategoryAndRoll() {
+            assertEquals(20,Yatzy.getScore(Category.LARGE_STRAIGHT, new Roll(6,2,3,4,5)));
+            assertEquals(20, Yatzy.getScore(Category.CHANCE, new Roll(6,2,3,4,5)));
+            assertEquals(5, Yatzy.getScore(Category.FIVES, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.ONES, new Roll(6,2,3,4,5)));
+            assertEquals(2,Yatzy.getScore(Category.TWOS, new Roll(6,2,3,4,5)));
+            assertEquals(3,Yatzy.getScore(Category.THREES, new Roll(6,2,3,4,5)));
+            assertEquals(4, Yatzy.getScore(Category.FOURS, new Roll(6,2,3,4,5)));
+            assertEquals(5, Yatzy.getScore(Category.FIVES, new Roll(6,2,3,4,5)));
+            assertEquals(6, Yatzy.getScore(Category.SIXES, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.YATZY_SCORE, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.FOR_OF_A_KIND, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.FULL_HOUSE, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.PAIR, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.SMALL_STRAIGHT, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.TWO_PAIRS, new Roll(6,2,3,4,5)));
+            assertEquals(0, Yatzy.getScore(Category.THREE_OF_A_KIND, new Roll(6,2,3,4,5)));
+    }
 }
